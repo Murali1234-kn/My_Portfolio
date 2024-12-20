@@ -13,6 +13,14 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
+    <!-- EmailJS Initialization -->
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("2Llm1gsE1MllphgF2"); // Initialize EmailJS with your Public Key
+        })();
+    </script>
 
     <style>
         html {
@@ -97,19 +105,6 @@
                         <span class="mx-1">|</span>
                         <a href="tel:+916300131956" class="hover:text-blue-400 transition duration-300">
                             +91 6300131956
-                        </a>
-                    </div>
-                    <div class="flex space-x-3 mt-2">
-                        <a href="https://github.com/Murali1234-kn" target="_blank"
-                            class="hover:text-blue-400 transition duration-300">
-                            <i class="bi bi-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/k-n-murali-royal/" target="_blank"
-                            class="hover:text-blue-400 transition duration-300">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="#" class="hover:text-blue-400 transition duration-300">
-                            <i class="bi bi-facebook"></i>
                         </a>
                     </div>
                 </div>
@@ -824,13 +819,13 @@
                 <form id="contact-form">
                     <div class="mb-6">
                         <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                        <input type="text" id="name" name="name"
+                        <input type="text" id="name" name="user_name"
                             class="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                             required>
                     </div>
                     <div class="mb-6">
                         <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-                        <input type="email" id="email" name="email"
+                        <input type="email" id="email" name="user_email"
                             class="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
                             required>
                     </div>
@@ -841,52 +836,78 @@
                             required></textarea>
                     </div>
                     <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg w-full">Send
-                        Message</button>
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg w-full">
+                        Send Message
+                    </button>
                 </form>
 
                 <!-- Success Message -->
                 <div id="success-message" class="mt-8 hidden text-center text-green-600 font-semibold">
-                    Thank you for reaching out! I'll get back to you as soon as possible.
+                    Thank you for reaching out! Your message has been successfully submitted.
+                    I’ll review it and get back to you shortly.
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <!-- Script for EmailJS form submission -->
     <script>
-        emailjs.init("muraliroyal0504@gmail.com");
-
         document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent form from reloading the page
 
             // Send the form data to EmailJS
-            emailjs.sendForm('your_service_id', 'your_template_id', this)
+            emailjs.sendForm('service_5dgywev', 'template_8rhy66d', this)
                 .then(function (response) {
                     // Display the success message
                     document.getElementById('success-message').classList.remove('hidden');
                     console.log('Success!', response.status, response.text);
+
                     // Reset the form
                     document.getElementById('contact-form').reset();
                 }, function (error) {
-                    console.log('Failed...', error);
+                    console.error('Failed to send email...', error);
+                    alert('There was an error sending the message. Please try again later.');
                 });
         });
     </script>
 
 
     <!-- Footer Section -->
-    <footer class="py-4 bg-gray-800 text-white text-center">
-        <div class="container mx-auto">
-            <p>&copy; 2024 K N Murali. All Rights Reserved.</p>
-            <div class="mt-4">
-                <a href="#about" class="text-white hover:underline mx-2">About Me</a>
-                <a href="#skills" class="text-white hover:underline mx-2">Skills</a>
-                <a href="#projects" class="text-white hover:underline mx-2">Projects</a>
-                <a href="#contact" class="text-white hover:underline mx-2">Contact</a>
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <!-- Social Media Links -->
+            <div class="mb-4">
+                <a href="https://www.linkedin.com/in/k-n-murali-royal/" target="_blank"
+                    class="text-white hover:text-blue-500 mx-2">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="https://github.com/Murali1234-kn/Murali1234-kn" target="_blank"
+                    class="text-white hover:text-gray-500 mx-2">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+                <a href="mailto:your-muraliroyal0504@gmail.com" target="_blank"
+                    class="text-white hover:text-red-500 mx-2">
+                    <i class="fas fa-envelope fa-lg"></i>
+                </a>
+                <a href="https://www.facebook.com/murali.leo.7186" target="_blank"
+                    class="text-white hover:text-red-500 mx-2">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/urstrulymurali_kn/" target="_blank"
+                    class="text-white hover:text-red-500 mx-2">
+                    <i class="bi bi-instagram"></i>
+                </a>
+
             </div>
+
+
+            <!-- Copyright -->
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 K N Murali . All Rights Reserved. | Built with 💻 and ☕
+            </p>
         </div>
     </footer>
+
 
 
 </body>
