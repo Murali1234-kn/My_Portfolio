@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K N Murali</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
     <!-- EmailJS Initialization -->
     <script type="text/javascript">
         (function () {
             emailjs.init("2Llm1gsE1MllphgF2");
         })();
     </script>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -26,6 +25,54 @@
 
         .modal {
             display: none;
+        }
+
+
+
+        #whatsappIcon {
+            position: fixed;
+            bottom: 90px;
+            /* Distance from the bottom */
+            right: 20px;
+            cursor: grab;
+            font-size: 3rem;
+            color: #25d366;
+            background-color: transparent;
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #whatsappIcon::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            border-radius: 50%;
+            animation: pulse-border 1500ms ease-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse-border {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
         }
 
         #whatsappIcon i {
@@ -719,48 +766,54 @@
     </a>
     <!-- Script -->
     <script>
-        document.getElementById('menuToggle').addEventListener('click', () => {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('hidden');
-        });
-        var typed = new Typed('.typed', {
-            strings: ["Jr. Software Engineer", "Full Stack Developer", "Web App Developer"],
-            typeSpeed: 40,
-            backSpeed: 10,
-            loop: true
-        });
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            emailjs.sendForm('service_5dgywev', 'template_8rhy66d', this)
-                .then(function (response) {
-                    document.getElementById('success-message').classList.remove('hidden');
-                    console.log('Success!', response.status, response.text);
-                    document.getElementById('contact-form').reset();
-                }, function (error) {
-                    console.error('Failed to send email...', error);
-                    alert('There was an error sending the message. Please try again later.');
-                });
-        });
-        let isDragging = false;
-        let offsetX, offsetY;
-        const whatsappIcon = document.getElementById('whatsappIcon');
-        whatsappIcon.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            offsetX = e.clientX - whatsappIcon.getBoundingClientRect().left;
-            offsetY = e.clientY - whatsappIcon.getBoundingClientRect().top;
-            whatsappIcon.style.cursor = 'grabbing';
-        });
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                const x = e.clientX - offsetX;
-                const y = e.clientY - offsetY;
-                whatsappIcon.style.left = `${x}px`;
-                whatsappIcon.style.top = `${y}px`;
-            }
-        });
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-            whatsappIcon.style.cursor = 'grab';
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('menuToggle').addEventListener('click', () => {
+                const navMenu = document.getElementById('navMenu');
+                navMenu.classList.toggle('hidden');
+            });
+            var typed = new Typed('.typed', {
+                strings: ["Jr. Software Engineer", "Full Stack Developer", "Web App Developer"],
+                typeSpeed: 40,
+                backSpeed: 10,
+                loop: true
+            });
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                emailjs.sendForm('service_5dgywev', 'template_8rhy66d', this)
+                    .then(function (response) {
+                        document.getElementById('success-message').classList.remove('hidden');
+                        console.log('Success!', response.status, response.text);
+                        document.getElementById('contact-form').reset();
+                    }, function (error) {
+                        console.error('Failed to send email...', error);
+                        alert('There was an error sending the message. Please try again later.');
+                    });
+            });
+
+            let isDragging = false;
+            let offsetX, offsetY;
+            const whatsappIcon = document.getElementById('whatsappIcon');
+
+            whatsappIcon.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - whatsappIcon.getBoundingClientRect().left;
+                offsetY = e.clientY - whatsappIcon.getBoundingClientRect().top;
+                whatsappIcon.style.cursor = 'grabbing';
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    const x = e.clientX - offsetX;
+                    const y = e.clientY - offsetY;
+                    whatsappIcon.style.left = `${x}px`;
+                    whatsappIcon.style.top = `${y}px`;
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                whatsappIcon.style.cursor = 'grab';
+            });
         });
     </script>
 </body>
