@@ -4,26 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K N Murali - Portfolio</title>
+    <title>K N Murali</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
     <link href="style.css" rel="stylesheet">
-
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-
     <!-- EmailJS Initialization -->
     <script type="text/javascript">
         (function () {
-            emailjs.init("2Llm1gsE1MllphgF2"); // Initialize EmailJS with your Public Key
+            emailjs.init("2Llm1gsE1MllphgF2");
         })();
     </script>
-
     <style>
         html {
             scroll-behavior: smooth;
@@ -32,21 +27,21 @@
         .modal {
             display: none;
         }
+
+        #whatsappIcon i {
+            pointer-events: none;
+        }
     </style>
 </head>
 
 <body class="bg-gray-600">
-
     <header class="bg-gray-800 text-gray-400 top-0 z-50 shadow-md">
         <nav class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
-            <!-- Profile Section -->
             <div class="flex items-center space-x-3">
-                <!-- Profile Name Image -->
                 <div class="w-12 h-12">
                     <img src="images/logo2.png" alt="K N Murali" class="w-full h-full rounded-full object-cover">
                 </div>
             </div>
-
             <!-- Navigation Links -->
             <button class="md:hidden text-gray-400 hover:text-white focus:outline-none" id="menuToggle">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -54,7 +49,6 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
-
             <ul id="navMenu"
                 class="hidden md:flex flex-col md:flex-row md:space-x-6 text-xs font-small mt-3 md:mt-0 w-full md:w-auto bg-gray-800 md:bg-transparent md:shadow-none shadow-lg rounded-lg md:rounded-none">
                 <li><a href="#hero"
@@ -75,8 +69,6 @@
             </ul>
         </nav>
     </header>
-
-
     <!-- Modal for Full-Size Image -->
     <!-- <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden">
         <div class="relative max-w-screen-lg w-full">
@@ -89,61 +81,44 @@
             </button>
         </div>
     </div> -->
-
     <section id="hero"
-        class="hero bg-cover bg-center h-screen flex flex-col justify-center items-start text-left relative px-4 sm:px-6 md:px-12"
+        class="hero bg-cover bg-center min-h-[50vh] sm:min-h-[60vh] flex flex-col justify-center items-center text-center relative px-4 sm:px-6 md:px-12"
         style="background-image: url('images/code.jpg');">
-        <div class="bg-black bg-opacity-60 w-full h-full absolute top-0 left-0"></div>
+        <div class="bg-black bg-opacity-60 absolute inset-0"></div>
         <div class="relative z-10 text-white w-full max-w-4xl">
             <!-- Formal Name Styling -->
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 md:mb-6 leading-tight">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 leading-tight">
                 K N Murali
             </h1>
-
-            <!-- Simple "I'm" Text -->
-            <p class="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mt-2">
+            <p class="text-xl sm:text-2xl md:text-3xl font-semibold text-white mt-2">
                 I'm <span class="typed text-indigo-500"></span><span class="typed-cursor typed-cursor--blink"></span>
             </p>
         </div>
     </section>
-
-
-
-    <!-- About section -->
-
-    <section id="about" class="relative py-20 bg-gradient-to-b from-blue-500 to-purple-500 text-white">
+    <section id="about"
+        class="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-blue-500 to-purple-500 text-white">
         <div class="absolute inset-0 bg-blue-100 bg-opacity-50"></div>
-
-        <!-- Section Content -->
-        <div class="relative container mx-auto">
-            <!-- Section Title -->
-            <div class="text-left mb-12" data-aos="fade-up">
-                <h2 class="text-4xl font-semibold text-blue-600 mb-4"> <u>About</u> </h2>
-                <p class="text-xl text-black">
-                    Motivated and results-oriented software developer with 1 year of experience in
-                    developing and maintaining web applications. Proficient in PHP, SQL, JQuery, JavaScript, and Java,
-                    with hands-on experience in frontend and backend development, UI/UX improvements, and API
-                    integrations. Strong problem-solving skills and a commitment to delivering high-quality, scalable
-                    solutions.
+        <div class="relative container mx-auto px-4">
+            <div class="text-center mb-8 sm:mb-12" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-blue-600 mb-4"><u>About</u></h2>
+                <p class="text-lg sm:text-xl text-black mx-auto max-w-3xl">
+                    Motivated and results-oriented software developer with 1 year of experience in developing and
+                    maintaining web applications. Proficient in PHP, SQL, JQuery, JavaScript, and Java, with hands-on
+                    experience in frontend and backend development, UI/UX improvements, and API integrations. Strong
+                    problem-solving skills and a commitment to delivering high-quality, scalable solutions.
                 </p>
             </div>
-
-            <!-- Flex Container -->
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8" data-aos="fade-up"
-                data-aos-delay="100">
-                <!-- Left Side Image -->
-                <div class="w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
-                    <img src="images/murali2.jpeg" class="w-80 h-auto object-cover rounded-md shadow-xl"
+            <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-8">
+                <div class="w-full sm:w-1/3 flex justify-center mb-8 sm:mb-0">
+                    <img src="images/murali2.jpeg" class="w-64 sm:w-72 md:w-80 h-auto object-cover rounded-md shadow-xl"
                         alt="Profile Image">
                 </div>
-
-                <!-- Right Side Content -->
-                <div class="w-full md:w-2/3 text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-black mb-4">Full Stack Developer & Web App Development</h2>
-                    <p class="italic text-lg text-gray-700 py-3"></p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800">
-                        <!-- Left Column -->
+                <div class="w-full sm:w-2/3 text-center sm:text-left">
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4">Full Stack Developer & Web
+                        App Development</h3>
+                    <p class="italic text-lg sm:text-xl text-gray-700 py-3">Passionate about developing scalable and
+                        dynamic web applications.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-800">
                         <div>
                             <ul>
                                 <li class="flex items-center mb-4">
@@ -154,18 +129,13 @@
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-linkedin text-blue-600 mr-2"></i>
                                     <a href="https://www.linkedin.com/in/k-n-murali-royal/" target="_blank"
-                                        class="font-semibold text-black hover:text-blue-600">
-                                        <i class="text-blue-600"></i> LinkedIn Profile
-                                    </a>
+                                        class="font-semibold text-black hover:text-blue-600">LinkedIn Profile</a>
                                 </li>
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-github text-blue-600 mr-2"></i>
                                     <a href="https://github.com/Murali1234-kn/Murali1234-kn" target="_blank"
-                                        class="font-semibold text-black hover:text-blue-600">
-                                        <i class="text-blue-600"></i> GitHub Profile
-                                    </a>
+                                        class="font-semibold text-black hover:text-blue-600">GitHub Profile</a>
                                 </li>
-
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
                                     <strong class="font-bold text-black">Phone:&nbsp;</strong>
@@ -179,16 +149,8 @@
                                     <strong class="font-bold text-black">Current City:&nbsp;</strong>
                                     <span class="font-semibold text-black"> Hyderabad, Telangana</span>
                                 </li>
-                                <li class="flex items-center mb-4">
-                                    <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
-                                    <strong class="font-bold text-black">Permanent Address:&nbsp;</strong>
-                                    <span class="font-semibold text-black"> Nayakaneri Village, V Kota Mandal, Chittoor
-                                        District, Andhra Pradesh - 517424</span>
-                                </li>
                             </ul>
                         </div>
-
-                        <!-- Right Column -->
                         <div>
                             <ul>
                                 <li class="flex items-center mb-4">
@@ -198,18 +160,23 @@
                                 </li>
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
-                                    <strong class="font-bold text-black">Degree:&nbsp;</strong>
+                                    <strong class="font-bold text-black">Graduate:&nbsp;</strong>
                                     <span class="font-semibold text-black"> B.Tech (ECE)</span>
                                 </li>
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
-                                    <strong class="font-bold text-black">Email:&nbsp;</strong>
-                                    <a href="mailto:muraliroyal0504@gmail.com"
-                                        class="underline hover:text-blue-400 transition duration-300 ">
-                                        muraliroyal0504@gmail.com &nbsp;knmurali91@gmail.com
-                                    </a>
+                                    <strong class="font-bold text-black">Email: &nbsp;</strong>
+                                    <div class="flex flex-col">
+                                        <a href="mailto:muraliroyal0504@gmail.com"
+                                            class="underline hover:text-blue-400 transition duration-300 mb-2">
+                                            muraliroyal0504@gmail.com
+                                        </a>
+                                        <a href="mailto:knmurali91@gmail.com"
+                                            class="underline hover:text-blue-400 transition duration-300">
+                                            knmurali91@gmail.com
+                                        </a>
+                                    </div>
                                 </li>
-
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
                                     <strong class="font-bold text-black">Marital Status:&nbsp;</strong>
@@ -223,33 +190,23 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="py-3 text-lg text-gray-800"> In terms of hobbies, I enjoy playing outdoor games,
+                    <p class="py-3 text-lg sm:text-xl text-gray-800">In terms of hobbies, I enjoy playing outdoor games,
                         traveling, and listening to music. I am an optimistic person, a team player, and I always strive
                         to learn new things to grow professionally. That’s a little about me.</p>
                 </div>
             </div>
         </div>
     </section>
-
-
-
     <section id="skills" class="relative bg-cover bg-center py-20 text-white"
         style="background-image: url('images/skills3.jpg');">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-        <!-- Section Content -->
         <div class="relative container mx-auto px-4">
-            <!-- Section Title -->
             <div class="text-left mb-12" data-aos="fade-up">
                 <h2 class="text-4xl font-semibold text-blue-800 text-center"><u>Skills</u></h2>
                 <p class="text-gray-200 mt-4 text-center">Here's a glimpse of my expertise in various technologies</p>
             </div>
-
-            <!-- Skill Cards -->
             <div class="px-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-
-                    <!-- Skill Card -->
                     <div
                         class="skill-card relative group overflow-hidden rounded-lg bg-gray-800 text-center p-6 transition-all hover:bg-blue-600">
                         <div class="skill-icon text-4xl mb-4 text-blue-400 group-hover:text-white transition-all">
@@ -262,8 +219,6 @@
                                 frameworks like Slim, Laravel.</p>
                         </div>
                     </div>
-
-                    <!-- Skill Card -->
                     <div
                         class="skill-card relative group overflow-hidden rounded-lg bg-gray-800 text-center p-6 transition-all hover:bg-orange-600">
                         <div class="skill-icon text-4xl mb-4 text-yellow-400 group-hover:text-white transition-all">
@@ -276,8 +231,6 @@
                                 and Spring Boot.</p>
                         </div>
                     </div>
-
-                    <!-- Skill Card -->
                     <div
                         class="skill-card relative group overflow-hidden rounded-lg bg-gray-800 text-center p-6 transition-all hover:bg-yellow-600">
                         <div class="skill-icon text-4xl mb-4 text-yellow-500 group-hover:text-white transition-all">
@@ -290,8 +243,6 @@
                                 experience in PHP and React.</p>
                         </div>
                     </div>
-
-                    <!-- Skill Card -->
                     <div
                         class="skill-card relative group overflow-hidden rounded-lg bg-gray-800 text-center p-6 transition-all hover:bg-pink-600">
                         <div class="skill-icon text-4xl mb-4 text-pink-400 group-hover:text-white transition-all">
@@ -304,8 +255,6 @@
                                 HTML code.</p>
                         </div>
                     </div>
-
-                    <!-- Skill Card -->
                     <div
                         class="skill-card relative group overflow-hidden rounded-lg bg-gray-800 text-center p-6 transition-all hover:bg-green-600">
                         <div class="skill-icon text-4xl mb-4 text-green-400 group-hover:text-white transition-all">
@@ -318,8 +267,6 @@
                             </p>
                         </div>
                     </div>
-
-                    <!-- Skill Card -->
                     <div
                         class="skill-card relative group overflow-hidden rounded-lg bg-gray-800 text-center p-6 transition-all hover:bg-red-600">
                         <div class="skill-icon text-4xl mb-4 text-red-400 group-hover:text-white transition-all">
@@ -332,8 +279,6 @@
                                 systems like MySQL, HeidiSQL, phpMyAdmin.</p>
                         </div>
                     </div>
-
-                    <!-- Skill Card -->
                     <div
                         class="skill-card relative group overflow-hidden rounded-lg bg-gray-800 text-center p-6 transition-all hover:bg-teal-600">
                         <div class="skill-icon text-4xl mb-4 text-teal-400 group-hover:text-white transition-all">
@@ -346,8 +291,6 @@
                                 completed at an institution.</p>
                         </div>
                     </div>
-
-                    <!-- Skill Card -->
                     <div
                         class="skill-card relative group overflow-hidden rounded-lg bg-gray-800 text-center p-6 transition-all hover:bg-indigo-600">
                         <div class="skill-icon text-4xl mb-4 text-indigo-400 group-hover:text-white transition-all">
@@ -364,24 +307,18 @@
             </div>
         </div>
     </section>
-
-
-    <!-- Tools, Frameworks, Databases, Other Skills Section -->
     <section id="tools" class="bg-gray-100 py-16">
         <div class="container mx-auto text-left mb-12">
             <h2 class="text-4xl font-semibold text-blue-600">Frameworks & Tools</h2>
             <p class="text-xl text-gray-600 mt-4">Frameworks, Databases, and Tools I work with.....</p>
         </div>
         <div class="container mx-auto px-6">
-            <!-- Grid Layout for Small Screens and Large Screens -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-
-                <!-- Frameworks -->
                 <div class="relative bg-cover bg-center p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
                     style="background-image: url('images/framework.jpg');">
-                    <div class="absolute inset-0 bg-black opacity-80 rounded-lg"></div> <!-- Stronger overlay -->
+                    <div class="absolute inset-0 bg-black opacity-80 rounded-lg"></div>
                     <h3 class="text-2xl font-semibold text-white flex items-center space-x-2 relative z-10">
-                        <i class="fas fa-cogs text-white"></i> <!-- Icon for Frameworks -->
+                        <i class="fas fa-cogs text-white"></i>
                         <span class="font-bold text-blue-500">Frameworks</span>
                     </h3>
                     <ul class="list-inside list-disc space-y-2 mt-4 text-white relative z-10">
@@ -399,8 +336,6 @@
                         </li>
                     </ul>
                 </div>
-
-                <!-- Databases -->
                 <div class="relative bg-cover bg-center p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
                     style="background-image: url('images/database.jpg');">
                     <div class="absolute inset-0 bg-black opacity-80 rounded-lg"></div> <!-- Stronger overlay -->
@@ -420,8 +355,6 @@
                         </li>
                     </ul>
                 </div>
-
-                <!-- Tools -->
                 <div class="relative bg-cover bg-center p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
                     style="background-image: url('images/tools.jpg');">
                     <div class="absolute inset-0 bg-black opacity-80 rounded-lg"></div> <!-- Stronger overlay -->
@@ -456,8 +389,6 @@
                         </li>
                     </ul>
                 </div>
-
-                <!-- Other Skills -->
                 <div class="relative bg-cover bg-center p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
                     style="background-image: url('images/othertools.avif');">
                     <div class="absolute inset-0 bg-black opacity-80 rounded-lg"></div> <!-- Stronger overlay -->
@@ -483,20 +414,13 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
-
-
-
-    <!-- Professional Experience Section -->
     <section id="work" class="bg-gray-900 py-12 sm:py-16 md:py-20">
         <div class="bg-gray-800 bg-opacity-90 py-12 max-w-screen-xl mx-auto px-6">
             <h2 class="text-3xl sm:text-4xl font-semibold text-center text-blue-400 mb-12">PROFESSIONAL EXPERIENCE</h2>
-
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
-                <!-- ATAMAI Solutions Experience -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
                     <h3 class="text-2xl font-semibold text-blue-600 mb-4">Jr. Software Developer</h3>
                     <p class="text-gray-700 mb-2"><strong>Company:</strong> ATAMAI Solutions Pvt Ltd, Hyderabad</p>
@@ -517,8 +441,6 @@
                         <li>Collaborated with the team to implement UI changes and integrate with back-end systems.</li>
                     </ul>
                 </div>
-
-                <!-- Law Learning (5th Estate) Experience -->
                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
                     <h3 class="text-2xl font-semibold text-blue-600 mb-4">Backend Developer (Intern)</h3>
                     <p class="text-gray-700 mb-2"><strong>Company:</strong> NUNC Systems Private Limited, Hyderabad</p>
@@ -539,12 +461,9 @@
                     </ul>
                 </div>
             </div>
-
         </div>
-
         <h2 class="text-3xl sm:text-4xl font-semibold text-center text-blue-400 mt-16 mb-12">PERSONAL PROJECTS</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
-            <!-- Personal Project Template -->
             <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
                 <h3 class="text-2xl font-semibold text-blue-600 mb-4">
                     Encryption_-_Decryption-Password_Using-SpringBoot</h3>
@@ -560,7 +479,6 @@
                     View Repository &rarr;
                 </a>
             </div>
-
             <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
                 <h3 class="text-2xl font-semibold text-blue-600 mb-4">ATAMAI-Data_Maniculation_PHP</h3>
                 <p class="text-gray-700 mb-4"><strong>Technologies:</strong> PHP, MySQL, DataTables, HTML, CSS</p>
@@ -574,7 +492,6 @@
                     View Repository &rarr;
                 </a>
             </div>
-
             <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
                 <h3 class="text-2xl font-semibold text-blue-600 mb-4">SuperAdmin & Admin & SubAdmin</h3>
                 <p class="text-gray-700 mb-4"><strong>Technologies:</strong> PHP, MySQL, HTML, CSS, Bootstrap</p>
@@ -587,7 +504,6 @@
                     View Repository &rarr;
                 </a>
             </div>
-
             <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
                 <h3 class="text-2xl font-semibold text-blue-600 mb-4">CRUD operations</h3>
                 <p class="text-gray-700 mb-4"><strong>Technologies:</strong> PHP, MySQL, Slim, Postman</p>
@@ -602,7 +518,6 @@
                     View Repository &rarr;
                 </a>
             </div>
-
             <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
                 <h3 class="text-2xl font-semibold text-blue-600 mb-4">Electronics_Category</h3>
                 <p class="text-gray-700 mb-4"><strong>Technologies:</strong> Java, MySQL, Spring Boot, Postman, APIs
@@ -617,7 +532,6 @@
                     View Repository &rarr;
                 </a>
             </div>
-
             <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
                 <h3 class="text-2xl font-semibold text-blue-600 mb-4">
                     Product_Details_CRUD-Operations_Using-SpringBoot</h3>
@@ -636,29 +550,19 @@
         </div>
         </div>
     </section>
-
-
-
     <section id="education"
         class="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-blue-200 to-gray-300 text-black">
         <div class="absolute inset-0 bg-blue-50 bg-opacity-70"></div>
-
-        <!-- Section Content -->
         <div class="relative container mx-auto px-4">
-            <!-- Section Title -->
             <div class="text-left mb-12" data-aos="fade-up">
                 <h2 class="text-3xl sm:text-4xl font-semibold text-blue-600 mb-4 sm:mb-6"><u>Education &
                         Certifications</u></h2>
             </div>
-
-            <!-- Education Details -->
             <div class="mb-16" data-aos="fade-up">
                 <h3 class="text-2xl sm:text-3xl font-bold text-blue-600 mb-6">Academic Credentials</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    <!-- Education List -->
                     <div class="text-gray-800">
                         <div class="space-y-6">
-                            <!-- B.Tech -->
                             <div class="flex flex-col sm:flex-row items-center">
                                 <div class="flex-1">
                                     <strong class="font-bold text-lg">B.TECH (ECE)</strong>
@@ -669,8 +573,6 @@
                                     <span class="font-semibold text-black">2022</span>
                                 </div>
                             </div>
-
-                            <!-- H.S.C -->
                             <div class="flex flex-col sm:flex-row items-center">
                                 <div class="flex-1">
                                     <strong class="font-bold text-lg">H.S.C (MPC)</strong>
@@ -681,8 +583,6 @@
                                     <span class="font-semibold text-black">2018</span>
                                 </div>
                             </div>
-
-                            <!-- S.S.C -->
                             <div class="flex flex-col sm:flex-row items-center">
                                 <div class="flex-1">
                                     <strong class="font-bold text-lg">S.S.C (English)</strong>
@@ -693,8 +593,6 @@
                                     <span class="font-semibold text-black">2016</span>
                                 </div>
                             </div>
-
-                            <!-- NPTEL Courses -->
                             <div class="flex flex-col sm:flex-row items-center">
                                 <div class="flex-1">
                                     <strong class="font-bold text-lg">NPTEL Courses:</strong>
@@ -705,15 +603,11 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Certifications Details -->
             <div data-aos="fade-up">
                 <h3 class="text-2xl sm:text-3xl font-bold text-blue-600 mb-6">Certifications</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    <!-- Certification List -->
                     <div class="text-gray-800">
                         <div class="space-y-6">
-                            <!-- Full Stack Developer Course -->
                             <div class="flex flex-col sm:flex-row items-center">
                                 <div class="flex-1">
                                     <strong class="font-bold text-lg">Full Stack Developer Course</strong>
@@ -724,8 +618,6 @@
                                     <p class="text-gray-600">Technologies: Java, SQL, HTML, CSS, APIs</p>
                                 </div>
                             </div>
-
-                            <!-- Development Course -->
                             <div class="flex flex-col sm:flex-row items-center">
                                 <div class="flex-1">
                                     <strong class="font-bold text-lg">Development Course</strong>
@@ -742,20 +634,17 @@
             </div>
         </div>
     </section>
-
-
     <section id="resume" class="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-blue-200 to-gray-200 text-black">
         <div class="container mx-auto text-center px-4">
             <h2 class="text-3xl sm:text-4xl font-semibold text-blue-600 mb-6 sm:mb-8"><u>Resume</u></h2>
             <p class="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8">Download my resume to learn more about my
                 professional journey and skills.</p>
-            <a href="Murali_KN.pdf"
+            <a href="Murali_KN_.pdf"
                 class="text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full text-lg sm:text-xl">
-                Download My Resume
+                🙂 Download My Resume
             </a>
         </div>
     </section>
-
     <section id="contact" class="bg-gray-100 py-8 md:py-16">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl sm:text-4xl font-semibold text-blue-600 mb-6 sm:mb-8 text-center">Contact Me</h2>
@@ -795,12 +684,8 @@
             </div>
         </div>
     </section>
-
-
-    <!-- Footer Section -->
     <footer class="bg-gray-900 text-white py-6">
         <div class="container mx-auto text-center px-4">
-            <!-- Social Media Links -->
             <div class="flex justify-center mb-4 space-x-4">
                 <a href="https://www.linkedin.com/in/k-n-murali-royal/" target="_blank"
                     class="text-white hover:text-blue-500">
@@ -822,27 +707,22 @@
                     <i class="bi bi-instagram fa-lg"></i>
                 </a>
             </div>
-            <!-- Copyright -->
             <p class="text-gray-400 text-sm">
                 &copy; 2024 K N Murali . All Rights Reserved. | Built with 💻 and ☕
             </p>
         </div>
     </footer>
-
     <a href="https://wa.me/916300131956" id="whatsappLink" target="_blank">
         <div id="whatsappIcon" class="draggable">
             <i class="fab fa-whatsapp"></i>
         </div>
     </a>
-
     <!-- Script -->
     <script>
-        // Toggle menu visibility on mobile
         document.getElementById('menuToggle').addEventListener('click', () => {
             const navMenu = document.getElementById('navMenu');
             navMenu.classList.toggle('hidden');
         });
-
         var typed = new Typed('.typed', {
             strings: ["Jr. Software Engineer", "Full Stack Developer", "Web App Developer"],
             typeSpeed: 40,
@@ -850,36 +730,26 @@
             loop: true
         });
         document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent form from reloading the page
-
-            // Send the form data to EmailJS
+            event.preventDefault();
             emailjs.sendForm('service_5dgywev', 'template_8rhy66d', this)
                 .then(function (response) {
-                    // Display the success message
                     document.getElementById('success-message').classList.remove('hidden');
                     console.log('Success!', response.status, response.text);
-
-                    // Reset the form
                     document.getElementById('contact-form').reset();
                 }, function (error) {
                     console.error('Failed to send email...', error);
                     alert('There was an error sending the message. Please try again later.');
                 });
         });
-
-        // Draggable Functionality
         let isDragging = false;
         let offsetX, offsetY;
-
         const whatsappIcon = document.getElementById('whatsappIcon');
-
         whatsappIcon.addEventListener('mousedown', (e) => {
             isDragging = true;
             offsetX = e.clientX - whatsappIcon.getBoundingClientRect().left;
             offsetY = e.clientY - whatsappIcon.getBoundingClientRect().top;
             whatsappIcon.style.cursor = 'grabbing';
         });
-
         document.addEventListener('mousemove', (e) => {
             if (isDragging) {
                 const x = e.clientX - offsetX;
@@ -888,14 +758,11 @@
                 whatsappIcon.style.top = `${y}px`;
             }
         });
-
         document.addEventListener('mouseup', () => {
             isDragging = false;
             whatsappIcon.style.cursor = 'grab';
         });
-
     </script>
-
 </body>
 
 </html>
