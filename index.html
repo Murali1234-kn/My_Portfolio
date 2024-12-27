@@ -13,6 +13,8 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
 
     <!-- EmailJS Initialization -->
@@ -30,160 +32,79 @@
         .modal {
             display: none;
         }
-
-        .stylish-text {
-            font-size: 4rem;
-            font-weight: 700;
-            /* Slightly less bold */
-            text-transform: capitalize;
-            /* Capitalizes only the first letter */
-            color: #ffffff;
-            /* Plain white text */
-            letter-spacing: 1px;
-            /* Minimal letter spacing */
-            text-shadow:
-                1px 1px 3px rgba(0, 0, 0, 0.2);
-            /* Subtle shadow for readability */
-        }
     </style>
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-gray-600">
 
-    <header class="bg-gray-800 text-white sticky top-0 z-50 shadow-md">
-        <nav class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
+    <header class="bg-gray-800 text-gray-400 top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
             <!-- Profile Section -->
-            <div class="flex flex-col items-center md:items-start md:flex-row md:space-x-3">
-                <!-- Profile Image -->
-                <div class="w-20 h-20 mb-2 md:mb-0 relative">
-                    <img src="images/murali2.jpeg" alt="Profile Image"
-                        class="rounded-full border-1 border-gray-300 cursor-pointer" id="profileImage" />
-                    <span class="absolute top-0 right-0 m-1.5 text-red-500 hover:text-red-600 cursor-pointer"
-                        onclick="closeModal()">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-3.5 h-3.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12" />
-                        </svg>
-                    </span>
-                </div>
-
-                <div id="imageModal"
-                    class="hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-                    <div class="bg-gray-800 rounded-lg p-4 shadow-lg">
-                        <img src="images/murali2.jpeg" alt="Profile Image" class="rounded-full max-w-sm">
-                    </div>
-                </div>
-
-                <script>
-                    function showModal() {
-                        document.getElementById('imageModal').classList.remove('hidden');
-                    }
-
-                    function closeModal() {
-                        document.getElementById('imageModal').classList.add('hidden');
-                    }
-
-                    document.getElementById('profileImage').addEventListener('click', showModal);
-
-                    window.addEventListener('click', (event) => {
-                        if (event.target === document.getElementById('imageModal')) {
-                            closeModal();
-                        }
-                    });
-                </script>
-
-                <!-- Profile Info -->
-                <div class="text-center md:text-left">
-                    <h1 class="text-lg font-bold text-blue-400 hover:text-yellow-400 transition duration-300">
-                        K N Murali
-                    </h1>
-                    <div class="text-xs text-gray-300 mt-1">
-                        <a href="mailto:muraliroyal0504@gmail.com" class="hover:text-blue-400 transition duration-300">
-                            muraliroyal0504@gmail.com
-                        </a>
-                        <span class="mx-1">|</span>
-                        <a href="tel:+916300131956" class="hover:text-blue-400 transition duration-300">
-                            +91 6300131956
-                        </a>
-                    </div>
+            <div class="flex items-center space-x-3">
+                <!-- Profile Name Image -->
+                <div class="w-12 h-12">
+                    <img src="images/logo2.png" alt="K N Murali" class="w-full h-full rounded-full object-cover">
                 </div>
             </div>
 
             <!-- Navigation Links -->
-            <ul class="flex flex-wrap space-x-3 text-xs font-medium mt-3 md:mt-0">
-                <li>
-                    <a href="#hero" class="flex items-center hover:text-blue-400 transition duration-300">
-                        <i class="fas fa-home mr-1"></i> Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#about" class="flex items-center hover:text-blue-400 transition duration-300">
-                        <i class="fas fa-user mr-1"></i> About
-                    </a>
-                </li>
-                <li>
-                    <a href="#work" class="flex items-center hover:text-blue-400 transition duration-300">
-                        <i class="fas fa-file-alt mr-1"></i> Work Experience
-                    </a>
-                </li>
-                <li>
-                    <a href="#skills" class="flex items-center hover:text-blue-400 transition duration-300">
-                        <i class="fas fa-tools mr-1"></i> Skills
-                    </a>
-                </li>
-                <li>
-                    <a href="#contact" class="flex items-center hover:text-blue-400 transition duration-300">
-                        <i class="fas fa-envelope mr-1"></i> Contact
-                    </a>
-                </li>
+            <button class="md:hidden text-gray-400 hover:text-white focus:outline-none" id="menuToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+
+            <ul id="navMenu" class="hidden md:flex flex-wrap space-x-6 text-xs font-small mt-3 md:mt-0">
+                <li><a href="#hero" class="hover:text-blue-400 transition duration-300">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-400 transition duration-300">About</a></li>
+                <li><a href="#work" class="hover:text-blue-400 transition duration-300">Work Experience</a></li>
+                <li><a href="#skills" class="hover:text-blue-400 transition duration-300">Skills</a></li>
+                <li><a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <script>
+        // Toggle menu visibility on mobile
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('hidden');
+        });
+    </script>
+
 
     <!-- Modal for Full-Size Image -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden">
+    <!-- <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden">
         <div class="relative max-w-screen-lg w-full">
-            <!-- Full-Size Image -->
             <img src="images/murali2.jpeg" alt="Full Profile Image"
                 class="w-full h-auto rounded-lg shadow-lg object-contain" />
 
-            <!-- Close Button -->
             <button onclick="closeModal()"
                 class="absolute top-5 right-5 bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center text-2xl">
                 &times;
             </button>
         </div>
-    </div>
+    </div> -->
 
     <section id="hero"
-        class="hero bg-cover bg-center h-screen flex flex-col justify-center items-start text-left relative px-6 md:px-12"
+        class="hero bg-cover bg-center h-screen flex flex-col justify-center items-start text-left relative px-4 sm:px-6 md:px-12"
         style="background-image: url('images/code.jpg');">
         <div class="bg-black bg-opacity-60 w-full h-full absolute top-0 left-0"></div>
         <div class="relative z-10 text-white w-full max-w-4xl">
             <!-- Formal Name Styling -->
-            <h1 class="text-6xl font-extrabold mb-6 leading-tight">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 md:mb-6 leading-tight">
                 K N Murali
             </h1>
 
             <!-- Simple "I'm" Text -->
-            <p class="text-4xl font-semibold text-white mt-2">
-                I'm <span class="typed text-4xl font-semibold text-indigo-500"></span><span
-                    class="typed-cursor typed-cursor--blink"></span>
+            <p class="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mt-2">
+                I'm <span class="typed text-indigo-500"></span><span class="typed-cursor typed-cursor--blink"></span>
             </p>
         </div>
     </section>
 
-    <!-- Add this JavaScript block below -->
-    <script>
-        var typed = new Typed('.typed', {
-            strings: ["Jr. Software Engineer", "Full Stack Developer", "Web App Developer"],
-            typeSpeed: 40,
-            backSpeed: 0,
-            loop: true
-        });
-    </script>
+
 
     <!-- About section -->
 
@@ -216,6 +137,7 @@
                 <div class="w-full md:w-2/3 text-center md:text-left">
                     <h2 class="text-3xl font-bold text-black mb-4">Full Stack Developer & Web App Development</h2>
                     <p class="italic text-lg text-gray-700 py-3">Nill</p>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800">
                         <!-- Left Column -->
                         <div>
@@ -233,7 +155,10 @@
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
                                     <strong class="font-bold text-black">Phone:&nbsp;</strong>
-                                    <span class="font-semibold text-black"> +91 6300131956</span>
+                                    <a href="tel:+916300131956"
+                                        class="underline hover:text-blue-400 transition duration-300">
+                                        +91 6300131956
+                                    </a>
                                 </li>
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
@@ -265,7 +190,10 @@
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
                                     <strong class="font-bold text-black">Email:&nbsp;</strong>
-                                    <span class="font-semibold text-black"> muraliroyal0504@gmail.com</span>
+                                    <a href="mailto:muraliroyal0504@gmail.com"
+                                        class="underline hover:text-blue-400 transition duration-300 ">
+                                        muraliroyal0504@gmail.com
+                                    </a>
                                 </li>
                                 <li class="flex items-center mb-4">
                                     <i class="bi bi-chevron-right text-blue-600 mr-2"></i>
@@ -285,7 +213,10 @@
                             </ul>
                         </div>
                     </div>
-                    <p class="py-3 text-lg text-gray-800">Nill</p>
+                    <p class="py-3 text-lg text-gray-800"> In terms of hobbies, I enjoy playing outdoor games,
+                        traveling, and listening music. I
+                        am an optimistic person, a team player, and I always strive to learn new things to grow
+                        professionally. That’s a little about me.</p>
                 </div>
             </div>
         </div>
@@ -850,28 +781,6 @@
         </div>
     </section>
 
-    <!-- Script for EmailJS form submission -->
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent form from reloading the page
-
-            // Send the form data to EmailJS
-            emailjs.sendForm('service_5dgywev', 'template_8rhy66d', this)
-                .then(function (response) {
-                    // Display the success message
-                    document.getElementById('success-message').classList.remove('hidden');
-                    console.log('Success!', response.status, response.text);
-
-                    // Reset the form
-                    document.getElementById('contact-form').reset();
-                }, function (error) {
-                    console.error('Failed to send email...', error);
-                    alert('There was an error sending the message. Please try again later.');
-                });
-        });
-    </script>
-
-
     <!-- Footer Section -->
     <footer class="bg-gray-900 text-white py-6">
         <div class="container mx-auto text-center">
@@ -908,7 +817,66 @@
         </div>
     </footer>
 
+    <a href="https://wa.me/9133822302" id="whatsappLink" target="_blank">
+        <div id="whatsappIcon" class="draggable">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </a>
 
+    <!-- Script -->
+    <script>
+        var typed = new Typed('.typed', {
+            strings: ["Jr. Software Engineer", "Full Stack Developer", "Web App Developer"],
+            typeSpeed: 40,
+            backSpeed: 10,
+            loop: true
+        });
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form from reloading the page
+
+            // Send the form data to EmailJS
+            emailjs.sendForm('service_5dgywev', 'template_8rhy66d', this)
+                .then(function (response) {
+                    // Display the success message
+                    document.getElementById('success-message').classList.remove('hidden');
+                    console.log('Success!', response.status, response.text);
+
+                    // Reset the form
+                    document.getElementById('contact-form').reset();
+                }, function (error) {
+                    console.error('Failed to send email...', error);
+                    alert('There was an error sending the message. Please try again later.');
+                });
+        });
+
+        // Draggable Functionality
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        const whatsappIcon = document.getElementById('whatsappIcon');
+
+        whatsappIcon.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - whatsappIcon.getBoundingClientRect().left;
+            offsetY = e.clientY - whatsappIcon.getBoundingClientRect().top;
+            whatsappIcon.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                const x = e.clientX - offsetX;
+                const y = e.clientY - offsetY;
+                whatsappIcon.style.left = `${x}px`;
+                whatsappIcon.style.top = `${y}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            whatsappIcon.style.cursor = 'grab';
+        });
+
+    </script>
 
 </body>
 
